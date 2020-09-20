@@ -2,9 +2,9 @@
   "name": "project",
   "version": "1.0.0",
   "description": "pratice individual project by zx",
-  "main": "webpackConfig.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -16,11 +16,11 @@
     "url": "https://github.com/zhengx55/PizzaHouse/issues"
   },
   "homepage": "https://github.com/zhengx55/PizzaHouse#readme",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  },
   "devDependencies": {
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
-  },
-  "dependencies": {
-    "jquery": "^3.5.1"
   }
 }
