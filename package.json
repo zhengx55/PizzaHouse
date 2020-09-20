@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "pratice individual project by zx",
+  "main": "webpackConfig.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhengx55/PizzaHouse.git"
+  },
+  "author": "Xin Zheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhengx55/PizzaHouse/issues"
+  },
+  "homepage": "https://github.com/zhengx55/PizzaHouse#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
