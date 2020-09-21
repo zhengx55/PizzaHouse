@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/zhengx55/PizzaHouse#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "jquery": "^3.5.1"
   },
   "devDependencies": {
