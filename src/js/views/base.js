@@ -11,6 +11,7 @@ export const elementString = {
     loader: 'loader'
 };
 
+// function to create the spin loader
 export const renderLoader = parent => {
     const loader = `
     <div class="${elementString.loader}">
