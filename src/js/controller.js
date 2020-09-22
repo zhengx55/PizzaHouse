@@ -68,6 +68,9 @@ const controlRecipe = async() => {
       try{
          // Get recipe data
          await state.recipe.getRecipe();
+         console.log(state.recipe.ingredient);
+         // Parse the ingredients
+         state.recipe.parseIngredients();
          // Calculate servings and time
          state.recipe.calcTime();
          state.recipe.calcServings();
