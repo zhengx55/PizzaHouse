@@ -61,11 +61,17 @@ elements.searchResPages.addEventListener('click', e=> {
 const controlRecipe = async() => {
    // get recipe id from the api
    const id = window.location.hash.replace('#', '');
-   console.log(id);
    if (id) {
       // generate UI elements
       recipeView.clearOldView();
       renderLoader(elements.recipeEl);
+
+      // Highlight the selected entry
+      if(state.search){
+         searchView.highlightSelected(id);
+      }
+      
+
       // Create new recipe object
       state.recipe = new Recipe(id);
       try{
@@ -87,3 +93,17 @@ const controlRecipe = async() => {
 };
 
 window.addEventListener('hashchange', controlRecipe);
+
+// handle click event for the serving modification
+elements.recipeEl.addEventListener('click', e => {
+   // use matches method to select handle different buttons
+   if(e.target.matches('.btn-decrease, .btn-decrease *')){
+      if(state.recipe.servings > 1){
+         state.recipe.updateServing('dec');
+         recipeView.updateServingsIngredients(state.recipe);
+      }
+   }else if(e.target.matches('.btn-increase, .btn-increase *')){
+      state.recipe.updateServing('inc');
+      recipeView.updateServingsIngredients(state.recipe);
+   }
+});

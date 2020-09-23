@@ -12,7 +12,20 @@ export const clearInput =() => {
 export const clearResults = () => {
     elements.searchResults.innerHTML = '';
     elements.searchResPages.innerHTML = '';
-};
+}
+
+export const highlightSelected = (id) => {
+    // clear pre-selected highlight
+    const res = Array.from(document.querySelectorAll('.results__link'));
+    res.forEach(cur => {
+        cur.classList.remove('results__link--active');
+    })
+    try{
+        document.querySelector(`a[href*="#${id}"]`).classList.add('results__link--active');
+    }catch(e){
+        console.log(e);
+    }
+}
 
 // local
 // set the limits of characters which is acceptable
