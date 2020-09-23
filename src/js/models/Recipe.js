@@ -56,10 +56,12 @@ export default class Recipe{
                 let count;
                 if (arrCount.length === 1) {
                     count = eval(arrIng[0].replace('-', '+'));
+                    if(count) count = count.toFixed(1);
                 } else {
                     //('2', '4').join('+') = '2+4'
                     // eval("4 + 1/2") --> 4.5
                     count = eval(arrIng.slice(0, unitIndex).join('+'));
+                    if(count) count = count.toFixed(1);
                 }
                 objIng = {
                     count,
