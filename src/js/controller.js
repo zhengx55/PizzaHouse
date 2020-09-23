@@ -1,4 +1,5 @@
 import * as searchView from './views/Search_View';
+import * as recipeView from './views/Recipe_View';
 import Search from './models/Search';
 import { clearLoader, elements, renderLoader } from './views/base';
 import Recipe from './models/Recipe';
@@ -63,18 +64,21 @@ const controlRecipe = async() => {
    console.log(id);
    if (id) {
       // generate UI elements
+      recipeView.clearOldView();
+      renderLoader(elements.recipeEl);
       // Create new recipe object
       state.recipe = new Recipe(id);
       try{
          // Get recipe data
          await state.recipe.getRecipe();
-         console.log(state.recipe.ingredient);
          // Parse the ingredients
          state.recipe.parseIngredients();
          // Calculate servings and time
          state.recipe.calcTime();
          state.recipe.calcServings();
          // Render recipe to the window
+         clearLoader();
+         recipeView.renderRecipe(state.recipe);
       }catch(e){
          alert('Error inside controlRecipe');
          console.log(e);
